@@ -10,16 +10,11 @@
 </head>
 <body>
 
-	<header id="main_navigation" class="clearfix">
-      <a href="index.html" class="name">FullStack.io</a>
-      <nav>
-      	<%= link_to "Articles", posts_path %>
-        <a href="#">Projects</a>
-        <a href="#">Contact</a>
-      </nav>
-    </header>
+	<%= render 'layouts/navbar' %>
 
-<%= yield %>
+  <%= yield %>
+
+  <%= render 'layouts/footer' %>
 
 </body>
 </html>
