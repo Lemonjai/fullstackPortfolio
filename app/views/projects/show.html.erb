@@ -6,15 +6,22 @@
       </header>
 
       <div id="content">
-
       	<%= markdown @project.description %>
+      </div>
+
+      <% if user_signed_in? %>
+        <div id="admin_links">
+          <%= link_to "Edit", edit_post_path(@post) %>
+          <%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure you want to delete this post?"} %>
+        </div>
+      <% end %>
         
         <div class="button_wrapper">
         <a href="<%= @project.link %>" class="project_button" target="_blank"> Visit <%= @project.title %>
         </a>
         </div>
 
-      </div>
+      
 
       <hr>
 
@@ -25,10 +32,6 @@
         <i class="fa fa-twitter"></i>
         <i class="fa fa-google-plus"></i>
       </div>
-
-      <%= link_to "Edit", edit_project_path(@project) %>
-      <%= link_to "Delete", project_path(@project), method: :delete, data: {confirm: "Are you sure you want to delete this project?"} %>
-
       <hr>
 
     </div>
