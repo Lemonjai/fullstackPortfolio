@@ -1,1 +1,13 @@
-<h1>Hello world</h1>
+ <h1 id="page_title">Stuff I've Written</h1>
+
+   <div id="post_wrapper" class="skinny_wrapper">
+
+   	<div class="post">
+   		<% @posts.each do |post| %>
+   		<p class="date"><%= post.created_at.strftime("%A, %b, %d")%></p>
+   		<h2><%= link_to post.title, post %> </h2>
+   		<hr>
+   		<% end %>
+   	</div>        
+
+   </div>
